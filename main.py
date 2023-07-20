@@ -20,7 +20,7 @@ def get_synonyms(word):
     synonyms = set()
     for synset in wordnet.synsets(word):
         for lemma in synset.lemmas():
-            if '_' not in lemma.name():  # Filter out multi-word synonyms
+            if '_' not in lemma.name() and '-' not in lemma.name():  # Filter out multi-word synonyms
                 synonyms.add(lemma.name())
     return list(synonyms)
 
@@ -59,6 +59,7 @@ def setup_docs():
     print(docs)
     expanded_dataset = []
     for label, text in docs:
+        expanded_dataset.append((label, text))
         synonyms = get_synonyms(text)
         for synonym in synonyms:
             expanded_dataset.append((label, synonym))
@@ -76,7 +77,7 @@ def get_splits(docs):
     X_test=[]   #test docs
     y_test=[]   #corresponding test label
 
-    pivot=int(0.80*len(docs))
+    pivot=int(0.70*len(docs))
 
     for i in range(0,pivot):
         X_train.append(docs[i][1])
@@ -151,7 +152,13 @@ def print_hi(name):
     docs=setup_docs()
     print(docs)
     train_classifier(docs)
-    new_doc="Group"
+    l=['literacy', 'banking', 'online', 'budgeting', 'savings', 'parents', 'parent', 'financial', 'teach', 'educational']
+    for i in l:
+        new_doc=i
+        print(new_doc)
+        classify(new_doc)
+        print()
+    new_doc="Run"
     print(new_doc)
     classify(new_doc)
     print("Done")
