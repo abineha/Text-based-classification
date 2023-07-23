@@ -1,1 +1,4 @@
 Produce Transform Update Delete Modify Convert Extract Merge Append Split
+Decompress Copy Move Load Save Print Export Import Normalize Denormalize
+Filter Group Aggregate Calculate Convert Encode Decode Encrypt Decrypt Compress
+

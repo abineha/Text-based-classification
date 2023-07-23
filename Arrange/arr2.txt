@@ -1,1 +1,2 @@
 Define Create Load Install Initialize Retrieve Collect Gather Sort Filter
+Group Merge Consolidate Format Convert Parse Identify Map Assign Design

@@ -1,1 +1,2 @@
 Log Trace Debug Troubleshoot Audit Review Analyze Measure Evaluate Validate
+Finish Succeed Fail Assert Expect Ensure Check Inspect Verify Validate

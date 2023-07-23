@@ -16,6 +16,7 @@ import nltk
 from nltk.corpus import wordnet
 
 
+
 def get_synonyms(word):
     synonyms = set()
     for synset in wordnet.synsets(word):
@@ -41,9 +42,12 @@ def create_data_set():
             for filename in os.listdir(dir):
                 fullfilename='%s/%s'% (dir, filename)
                 print(fullfilename)
-                with open(fullfilename,'rb') as file:
-                    text= file.read().decode(errors='replace').replace('\n','')
-                    outfile.write('%s\t%s\t%s\n'%(label,filename,text))
+                with open(fullfilename,'r') as file:
+                    lines = file.readlines()
+                    single_line = ''.join(lines).replace('\n', ' ')
+                    outfile.write('%s\t%s\t%s\n'%(label,filename,single_line))
+                    #text= file.read().decode(errors='replace').replace('\n','')
+                    #outfile.write('%s\t%s\t%s\n'%(label,filename,text))
 
 
 def setup_docs():
@@ -65,6 +69,8 @@ def setup_docs():
             expanded_dataset.append((label, synonym))
     print("expanded doc:")
     print(expanded_dataset)
+    print("length of expanded doc: ")
+    print(len(expanded_dataset))
     return expanded_dataset
 
 
@@ -144,28 +150,20 @@ def classify(text):
 
     pred=nb_clf.predict(vectorizer.transform([text]))
     print(pred[0])
+    with open('result.txt','a',encoding='utf8') as outfile:
+        outfile.write((pred[0])+"\n\n")
+        outfile.flush()
 
-
-def print_hi(name):
-    # Use a brSeakpoint in the code line below to debug your script.
+def train():
     create_data_set()
     docs=setup_docs()
     print(docs)
     train_classifier(docs)
-    l=['literacy', 'banking', 'online', 'budgeting', 'savings', 'parents', 'parent', 'financial', 'teach', 'educational']
-    for i in l:
-        new_doc=i
-        print(new_doc)
-        classify(new_doc)
-        print()
-    new_doc="Run"
-    print(new_doc)
+def start(usecase):
+    with open('result.txt','a',encoding='utf8') as outfile:
+        outfile.write((usecase)+"\n")
+        outfile.flush()
+    print(usecase)
+    new_doc=usecase
     classify(new_doc)
-    print("Done")
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

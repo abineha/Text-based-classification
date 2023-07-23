@@ -1,1 +1,2 @@
 Verify Compare Validate Check Ensure Assert Confirm Test Inspect Monitor
+Catch Throw Recover Retry Abort Warn Inform Log Exit Halt
