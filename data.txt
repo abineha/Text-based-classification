@@ -1,0 +1,9 @@
+Arrange	arr0.txt	report audit profile estimate model bank online business tool customer customers owner traveler currencies currency elderly patient 
+Arrange	arr1.txt	Setup Initialize Configure Prepare Organize Arrange Plan Set Establish Select Choose Determine Specify Inspect Debug Troubleshoot Measure Analyze Optimize Monitor 
+Arrange	arr2.txt	Define Create Load Install Initialize Retrieve Collect Gather Sort Filter Group Merge Consolidate Format Convert Parse Identify Map Assign Design 
+Act	act0.txt	login finances banking easy friendly budgeting budget small financing email new quick fast transfer transfers competitive regularly frequent mobility help helpful assist 
+Act	act1.txt	Execute Process Calculate Compute Run Perform Invoke Call Handle Generate Sort Shuffle Search Rank Recommend Classify Predict Cluster Train Test 
+Act	act2.txt	Produce Transform Update Delete Modify Convert Extract Merge Append Split Decompress Copy Move Load Save Print Export Import Normalize Denormalize Filter Group Aggregate Calculate Convert Encode Decode Encrypt Decrypt Compress  
+Assert	as0.txt	account accounts privacy transaction transactions confidentiality output balance market accept acceptance reject Identify Match Align Detect Investigate Document Report Notify Raise Handle 
+Assert	as1.txt	Verify Compare Validate Check Ensure Assert Confirm Test Inspect Monitor Catch Throw Recover Retry Abort Warn Inform Log Exit Halt 
+Assert	as2.txt	Log Trace Debug Troubleshoot Audit Review Analyze Measure Evaluate Validate Finish Succeed Fail Assert Expect Ensure Check Inspect Verify Validate 
