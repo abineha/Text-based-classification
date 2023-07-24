@@ -139,7 +139,7 @@ def train_classifier(docs):
     pickle.dump(vectorizer,open(vec_filename,'wb'))
 
 
-def classify(text):
+def classify(text,result):
     #load classifier
     clf_filename='naive_bayes_classifier.pkl'
     nb_clf=pickle.load(open(clf_filename,'rb'))
@@ -150,7 +150,7 @@ def classify(text):
 
     pred=nb_clf.predict(vectorizer.transform([text]))
     print(pred[0])
-    with open('result.txt','a',encoding='utf8') as outfile:
+    with open(result,'a',encoding='utf8') as outfile:
         outfile.write((pred[0])+"\n\n")
         outfile.flush()
 
@@ -159,11 +159,11 @@ def train():
     docs=setup_docs()
     print(docs)
     train_classifier(docs)
-def start(usecase):
-    with open('result.txt','a',encoding='utf8') as outfile:
+def start(usecase,result):
+    with open(result,'a',encoding='utf8') as outfile:
         outfile.write((usecase)+"\n")
         outfile.flush()
     print(usecase)
     new_doc=usecase
-    classify(new_doc)
+    classify(new_doc,result)
 
